@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Umam - Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#3498db',
+                        'secondary': '#2c3e50',
+                        'accent': '#667eea',
+                    },
+                    animation: {
+                        'fadeInUp': 'fadeInUp 1s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'slideInLeft': 'slideInLeft 0.8s ease forwards',
+                        'slideInRight': 'slideInRight 0.8s ease forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Menambahkan utility untuk menyembunyikan scrollbar */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="font-poppins text-gray-800 overflow-x-hidden">
+
+    <!-- Header/Navbar -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-secondary hover:text-primary transition-colors duration-300">
+                        Ahmad Umam
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-1">
+                        <a href="#home" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Beranda
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#about" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Tentang
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#skills" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Keahlian
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#projects" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Proyek
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#gallery" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Galeri
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#certificates" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Sertifikat
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#contact" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            Kontak
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-btn p-2 rounded-md text-gray-600 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mobile-menu hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-lg mt-2">
+                    <a href="#home" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Beranda</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Tentang</a>
+                    <a href="#skills" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Keahlian</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Proyek</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Galeri</a>
+                    <a href="#certificates" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Sertifikat</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary block px-3 py-2 text-base font-medium">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80');">
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black/50"></div>
+        
+        <!-- Optional: Gradient overlay for more sophisticated look -->
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/30 to-purple-600/30"></div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 opacity-0 animate-fadeInUp drop-shadow-2xl" style="animation-delay: 0.5s;">
+                Halo, Saya Umam!
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-0 animate-fadeInUp drop-shadow-lg" style="animation-delay: 0.8s;">
+                Data Analyst & Software Developer
+            </p>
+            <p class="text-lg mb-12 max-w-2xl mx-auto opacity-0 animate-fadeInUp drop-shadow-lg" style="animation-delay: 1.1s;">
+                Saya menggabungkan logika data dengan desain antarmuka yang elegan untuk menciptakan solusi digital yang bermakna. Mari berkolaborasi dan wujudkan inovasi bersama!
+            </p>
+            <a href="#about" class="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-accent transition-all duration-300 hover:transform hover:-translate-y-1 opacity-0 animate-fadeInUp shadow-2xl" style="animation-delay: 1.4s;">
+                Pelajari Lebih Lanjut
+            </a>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
+                Tentang Saya
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center opacity-0 animate-slideInLeft" id="about-image">
+                    <div class="w-80 h-80 rounded-full bg-gradient-to-br from-accent to-blue-400 p-2 shadow-2xl">
+                        <img src="foto/awajah.jpg" alt="Foto Ahmad Khotibul Umam" 
+                             class="w-full h-full rounded-full object-cover"/>
+                    </div>
+                </div>
+                <div class="opacity-0 animate-slideInRight" id="about-text">
+                    <h3 class="text-3xl font-semibold text-secondary mb-6">Saya Ahmad Umam!</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8 text-justify">
+                        Saya adalah seorang Mahasiswa semester 7 Program Studi Sistem Informasi Universitas Dian
+                        Nuswantoro. berfokus membangun karier sebagai Data Analyst. Berpengalaman dalam pengembangan
+                        aplikasi berbasis mobile, menganalisis data, dan Aktif di organisasi dan kegiatan, dengan kemampuan manajemen
+                        waktu dan komunikasi tim yang baik. siap berkontribusi di perusahaan dengan semangat belajar dan
+                        keterampilan yang saya miliki.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Skills Section -->
+    <section id="skills" class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
+                Keahlian Saya
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Python</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="90%"></div>
+                    </div>
+                    <span class="text-sm text-gray-600">80%</span>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Laravel</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="85%"></div>
+                    </div>
+                    <span class="text-sm text-gray-600">80%</span>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">SQL</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="85%"></div>
+                    </div>
+                    <span class="text-sm text-gray-600">80%</span>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">UI/UX Design</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="75%"></div>
+                    </div>
+                    <span class="text-sm text-gray-600">75%</span>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-10 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
+      Proyek Unggulan
+    </h2>
+
+    <!-- Project 1: Gunungku -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="relative group order-1">
+          <div class="overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 transition-transform duration-300">
+            <img src="foto/GUNUNGKU MOBILE.jpg" alt="Gunungku App" class="w-full h-64 sm:h-80 object-cover" />
+          </div>
+        </div>
+        <div class="space-y-6 order-2">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Gunungku</h3>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Aplikasi pendakian yang memudahkan beli tiket dan memberikan info jalur dan gunung, membantu pendakian nikmat alam dengan lebih siap dan aman. Menggunakan Laravel dan Flutter.
+          </p>
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Laravel</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Flutter</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Mobile App</span>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://gunungku.com/" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i>Lihat
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: Data Analysis Dashboard -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="relative group order-1 lg:order-2">
+          <div class="overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 transition-transform duration-300">
+            <img src="foto/projek2.png" alt="Tampilan dashboard Looker Studio" class="w-full h-64 sm:h-80 object-cover" />
+          </div>
+        </div>
+        <div class="space-y-6 order-2 lg:order-1">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Dashboard Tingkat Pengangguran Terbuka di Indonesia</h3>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Dashboard analitis ini menyajikan data Tingkat Pengangguran Terbuka (TPT) di Indonesia dengan fokus pada analisis berdasarkan tingkat pendidikan dari tahun 2015 hingga 2024. Dirancang untuk wawasan cepat melalui visualisasi tren dan distribusi pengangguran.
+          </p>
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Python</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Looker Studio</span>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://lookerstudio.google.com/reporting/ce3add2c-f7b5-4168-a648-b416413fc5b6/page/eVeNF" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i>Lihat
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
+                Pengalaman
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-all duration-300">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="foto/p4.jpg" alt="Wirausaha Merdeka 2024" 
+                             class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"/>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2">Wirausaha Merdeka 2024</h3>
+                            <p class="text-sm opacity-90">Menjadi salah satu tim yang mendapatkan pendanaan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-all duration-300">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="foto/p3.jpg" alt="Ketua Pelaksana" 
+                             class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"/>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2">Ketua Pelaksana</h3>
+                            <p class="text-sm opacity-90">Aktif Organisasi dan Menjadi Ketua pelaksana kegiatan Pelantikan Kepengurusan Hipmi PT Udinus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-all duration-300">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="foto/p1.jpg" alt="Lomba BMC" 
+                             class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"/>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-semibold mb-2">Lomba BMC</h3>
+                            <p class="text-sm opacity-90">Aktif Mengikuti Lomba Tingkat Nasional Business Model Canvas</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>  
+
+      <!-- Certificates Section -->
+    <section id="certificates" class="py-10 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
+                Sertifikat
+            </h2>
+            <!-- Certificates Scroll Container -->
+            <div class="relative">
+                <!-- Scrollable Container -->
+                <div class="overflow-x-auto scrollbar-hide certificate-container" style="scroll-behavior: smooth;">
+                    <div class="flex space-x-6 pb-4" style="width: max-content;">
+                        
+                        <!-- Certificate 1 -->
+                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="relative overflow-hidden rounded-t-2xl">
+                               <div class="w-full aspect-w-16 aspect-h-20">
+                                 <img src="foto/s1.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
+                                    Wirausaha Merdeka 2024
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-3">
+                                    Udinus | MBKM
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400">
+                                        <i class="fas fa-calendar mr-1"></i>Desembar 2024
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 2 -->
+                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="relative overflow-hidden rounded-t-2xl">
+                               <div class="w-full aspect-w-16 aspect-h-20">
+                                 <img src="foto/s2.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
+                                    Data Analyst SQL & Python
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-3">
+                                    DQLab | Bootcamp
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400">
+                                        <i class="fas fa-calendar mr-1"></i>Januari 2024
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 3 -->
+                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="relative overflow-hidden rounded-t-2xl">
+                               <div class="w-full aspect-w-16 aspect-h-20">
+                                 <img src="foto/s3.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
+                                    Dinus Fest 2024
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-3">
+                                    Udinus | Panitia
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400">
+                                        <i class="fas fa-calendar mr-1"></i>Januari 2024
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 4 -->
+                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="relative overflow-hidden rounded-t-2xl">
+                               <div class="w-full aspect-w-16 aspect-h-20">
+                                 <img src="foto/s4.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
+                                    Anggota Hipmi Pt Udinus 2023/2024
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-3">
+                                    UKM | Keaktifan Organisasi
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400">
+                                        <i class="fas fa-calendar mr-1"></i>Juli 2024
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 5 -->
+                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="relative overflow-hidden rounded-t-2xl">
+                               <div class="w-full aspect-w-16 aspect-h-20">
+                                 <img src="foto/s5.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
+                                    Data Science Explorers 2024
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-3">
+                                    SAP | Coursera
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400">
+                                        <i class="fas fa-calendar mr-1"></i>Januari 2024
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
+                Hubungi Saya
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-2xl font-semibold text-secondary mb-6 text-center">Mari Berkolaborasi!</h3>
+                    <p class="text-lg text-gray-600 text-center mb-12">
+                        Saya selalu terbuka untuk proyek menarik dan peluang kerja sama. Jangan ragu untuk menghubungi saya!
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                                <i class="fas fa-envelope text-2xl text-primary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary mb-2">Email</h4>
+                            <p class="text-gray-600">ahmadumam246@email.com</p>
+                        </div>
+                        
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                                <i class="fab fa-whatsapp text-2xl text-primary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary mb-2">WhatsApp</h4>
+                            <p class="text-gray-600">+62 838-6658-7892</p>
+                        </div>
+                        
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                                <i class="fas fa-map-marker-alt text-2xl text-primary"></i>
+                            </div>
+                            <h4 class="font-semibold text-secondary mb-2">Lokasi</h4>
+                            <p class="text-gray-600">Semarang, Jawa Tengah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-300">
+                    &copy; 2025 Ahmad Umam. Semua hak cipta dilindungi.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'about-image') {
+                        entry.target.classList.remove('opacity-0');
+                        entry.target.classList.add('animate-slideInLeft');
+                    }
+                    if (entry.target.id === 'about-text') {
+                        entry.target.classList.remove('opacity-0');
+                        entry.target.classList.add('animate-slideInRight');
+                    }
+                    
+                    // Animate skill bars
+                    if (entry.target.id === 'skills') {
+                        const skillBars = entry.target.querySelectorAll('.skill-bar');
+                        skillBars.forEach((bar, index) => {
+                            setTimeout(() => {
+                                const width = bar.getAttribute('data-width');
+                                bar.style.width = width;
+                            }, index * 200);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        const aboutImage = document.getElementById('about-image');
+        const aboutText = document.getElementById('about-text');
+        const skillsSection = document.getElementById('skills');
+
+        if (aboutImage) observer.observe(aboutImage);
+        if (aboutText) observer.observe(aboutText);
+        if (skillsSection) observer.observe(skillsSection);
+
+        // Certificate scroll functionality
+        const certificateContainer = document.querySelector('.certificate-container');
+        const scrollBtnLeft = document.querySelector('.scroll-btn-left');
+        const scrollBtnRight = document.querySelector('.scroll-btn-right');
+        const scrollIndicators = document.querySelectorAll('.scroll-indicator');
+
+        if (certificateContainer && scrollBtnLeft && scrollBtnRight) {
+            const scrollAmount = 320; // Width of one certificate card + gap
+            
+            scrollBtnLeft.addEventListener('click', () => {
+                certificateContainer.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            scrollBtnRight.addEventListener('click', () => {
+                certificateContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Update scroll indicators
+            certificateContainer.addEventListener('scroll', () => {
+                const scrollLeft = certificateContainer.scrollLeft;
+                const scrollWidth = certificateContainer.scrollWidth - certificateContainer.clientWidth;
+                const scrollPercentage = scrollLeft / scrollWidth;
+                
+                // Update active indicator
+                scrollIndicators.forEach((indicator, index) => {
+                    indicator.classList.remove('active');
+                    if (index === Math.round(scrollPercentage * (scrollIndicators.length - 1))) {
+                        indicator.classList.add('active');
+                    }
+                });
+
+                // Show/hide scroll buttons
+                scrollBtnLeft.style.opacity = scrollLeft > 0 ? '1' : '0.5';
+                scrollBtnRight.style.opacity = scrollLeft < scrollWidth ? '1' : '0.5';
+            });
+
+            // Touch/swipe support for mobile
+            let isDown = false;
+            let startX;
+            let scrollLeftStart;
+
+            certificateContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - certificateContainer.offsetLeft;
+                scrollLeftStart = certificateContainer.scrollLeft;
+                certificateContainer.style.cursor = 'grabbing';
+            });
+
+            certificateContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+                certificateContainer.style.cursor = 'grab';
+            });
+
+            certificateContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                certificateContainer.style.cursor = 'grab';
+            });
+
+            certificateContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - certificateContainer.offsetLeft;
+                const walk = (x - startX) * 2;
+                certificateContainer.scrollLeft = scrollLeftStart - walk;
+            });
+
+            // Initial state
+            certificateContainer.style.cursor = 'grab';
+            scrollBtnLeft.style.opacity = '0.5';
+        }
+    </script>
+</body>
+
+</html>
