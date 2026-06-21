@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmad Umam - Portofolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,12 +14,12 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
+                        'poppins': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#3498db',
-                        'secondary': '#2c3e50',
-                        'accent': '#667eea',
+                        'primary': '#1c69d4',
+                        'secondary': '#262626',
+                        'accent': '#1a2129',
                     },
                     animation: {
                         'fadeInUp': 'fadeInUp 1s ease forwards',
@@ -50,6 +50,407 @@
         }
     </script>
     <style>
+        :root {
+            --bmw-blue: #1c69d4;
+            --bmw-blue-active: #0653b6;
+            --ink: #262626;
+            --body: #3c3c3c;
+            --muted: #6b6b6b;
+            --hairline: #e6e6e6;
+            --canvas: #ffffff;
+            --surface-soft: #f7f7f7;
+            --surface-card: #fafafa;
+            --surface-dark: #1a2129;
+            --surface-dark-elevated: #262e38;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--canvas);
+            color: var(--body);
+            font-weight: 300;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-bold,
+        .font-semibold {
+            color: var(--ink);
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        section {
+            scroll-margin-top: 64px;
+        }
+
+        #navbar {
+            background: rgba(255, 255, 255, 0.96) !important;
+            border-bottom: 1px solid var(--hairline);
+            box-shadow: none !important;
+        }
+
+        #navbar a {
+            color: var(--ink);
+        }
+
+        #navbar a:hover {
+            color: var(--bmw-blue) !important;
+        }
+
+        #navbar .text-sm {
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        #home {
+            background-color: var(--canvas);
+            background-size: auto 100% !important;
+            background-position: right center !important;
+            background-repeat: no-repeat !important;
+            background-blend-mode: normal;
+            justify-content: flex-start;
+        }
+
+        #home .hero-soft-overlay {
+            background: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        #home .bg-gradient-to-br {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.96) 42%, rgba(255, 255, 255, 0.68) 68%, rgba(255, 255, 255, 0.18) 100%) !important;
+        }
+
+        #home .relative.z-10 {
+            max-width: 1440px;
+            width: 100%;
+            text-align: left;
+            padding-left: clamp(24px, 6vw, 80px);
+            padding-right: clamp(24px, 6vw, 80px);
+        }
+
+        #home h1 {
+            color: var(--ink);
+            font-size: clamp(40px, 7vw, 76px);
+            line-height: 1.05;
+            max-width: 820px;
+            text-shadow: none;
+        }
+
+        #home p {
+            color: var(--body);
+            text-shadow: none;
+        }
+
+        #home p:nth-of-type(2) {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        #home .mx-auto {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        #home a,
+        #projects a[href^="http"] {
+            min-height: 48px;
+            border: 0 !important;
+            border-radius: 0 !important;
+            background: var(--bmw-blue) !important;
+            color: #ffffff !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: none !important;
+        }
+
+        #home a:hover,
+        #projects a[href^="http"]:hover {
+            background: var(--bmw-blue-active) !important;
+            transform: translateY(-1px);
+        }
+
+        #home a + a {
+            background: transparent !important;
+            border: 1px solid var(--ink) !important;
+            color: var(--ink) !important;
+        }
+
+        #home a + a:hover {
+            background: var(--ink) !important;
+            border-color: var(--ink) !important;
+            color: #ffffff !important;
+        }
+
+        #about,
+        #projects,
+        #certificates,
+        footer {
+            background: var(--surface-soft) !important;
+        }
+
+        #skills,
+        #gallery,
+        #contact {
+            background: var(--canvas) !important;
+        }
+
+        #about,
+        #skills,
+        #projects,
+        #gallery,
+        #certificates,
+        #contact {
+            padding-top: 80px !important;
+            padding-bottom: 80px !important;
+        }
+
+        section h2 {
+            text-align: left !important;
+            margin-bottom: 48px !important;
+            font-size: clamp(32px, 4vw, 48px) !important;
+            line-height: 1.1;
+        }
+
+        #about-image > div {
+            border-radius: 0 !important;
+            background: var(--surface-card) !important;
+            border: 1px solid var(--hairline);
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        #about-image img {
+            border-radius: 0 !important;
+        }
+
+        #skills .grid > div,
+        #projects .max-w-7xl > div,
+        #contact .max-w-4xl > div {
+            border-radius: 0 !important;
+            border: 1px solid var(--hairline);
+            box-shadow: none !important;
+            background: var(--canvas) !important;
+        }
+
+        #skills .grid > div:hover {
+            transform: translateY(-4px) !important;
+            border-color: #cccccc;
+        }
+
+        #skills .text-4xl,
+        #contact i,
+        .text-primary {
+            color: var(--bmw-blue) !important;
+        }
+
+        .skill-bar {
+            background: var(--bmw-blue) !important;
+            border-radius: 0 !important;
+        }
+
+        #skills .rounded-full {
+            border-radius: 0 !important;
+        }
+
+        #projects img,
+        #gallery img,
+        #certificates img {
+            border-radius: 0 !important;
+        }
+
+        #projects .overflow-hidden,
+        #gallery .group {
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+
+        #projects span {
+            border-radius: 0 !important;
+            border: 1px solid var(--hairline);
+            background: var(--surface-card) !important;
+            color: var(--ink) !important;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .certificate-card {
+            border: 1px solid var(--hairline);
+            cursor: zoom-in;
+            transition: transform 220ms ease, border-color 220ms ease;
+        }
+
+        .certificate-card:focus-visible {
+            outline: 3px solid rgba(28, 105, 212, 0.35);
+            outline-offset: 4px;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-4px);
+            border-color: #cccccc;
+        }
+
+        .certificate-image {
+            aspect-ratio: 4 / 3;
+            background: var(--surface-card);
+            border-bottom: 1px solid var(--hairline);
+            overflow: hidden;
+        }
+
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 300ms ease;
+        }
+
+        .certificate-card:hover .certificate-image img {
+            transform: scale(1.03);
+        }
+
+        .certificate-body {
+            padding: 24px;
+        }
+
+        .certificate-meta {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--bmw-blue);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .certificate-body h3 {
+            margin-bottom: 8px;
+            color: var(--ink);
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        .certificate-body p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .certificate-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(26, 33, 41, 0.88);
+        }
+
+        .certificate-lightbox.is-open {
+            display: flex;
+        }
+
+        .certificate-lightbox-panel {
+            position: relative;
+            width: min(100%, 980px);
+            max-height: 92vh;
+            background: var(--canvas);
+            border: 1px solid var(--hairline);
+            padding: 16px;
+        }
+
+        .certificate-lightbox img {
+            width: 100%;
+            max-height: calc(92vh - 96px);
+            object-fit: contain;
+            display: block;
+            background: var(--surface-card);
+        }
+
+        .certificate-lightbox-title {
+            margin-top: 12px;
+            color: var(--ink);
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .certificate-lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--ink);
+            color: #ffffff;
+            border: 0;
+            cursor: pointer;
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        #gallery .group {
+            border: 1px solid var(--hairline);
+        }
+
+        #gallery h3,
+        #gallery p {
+            color: #ffffff !important;
+        }
+
+        #contact .bg-primary\/10 {
+            background: #eef5ff !important;
+        }
+
+        #contact .rounded-full,
+        footer .rounded-full {
+            border-radius: 9999px !important;
+        }
+
+        footer {
+            color: var(--body) !important;
+            border-top: 1px solid var(--hairline);
+        }
+
+        footer a {
+            background: var(--ink) !important;
+            color: #ffffff !important;
+            box-shadow: none !important;
+        }
+
+        footer p {
+            color: var(--muted) !important;
+        }
+
+        @media (max-width: 767px) {
+            #home .relative.z-10 {
+                padding-top: 128px;
+                padding-bottom: 80px;
+            }
+
+            #navbar .mobile-menu > div {
+                border-radius: 0 !important;
+                border: 1px solid var(--hairline);
+                box-shadow: none !important;
+            }
+        }
+
         /* Menambahkan utility untuk menyembunyikan scrollbar */
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -134,26 +535,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80');">
+    <section id="home" class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white relative overflow-hidden" style="background-image: url('foto/Wisuda2.JPG');">
         <!-- Dark overlay for better text readability -->
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 hero-soft-overlay"></div>
         
         <!-- Optional: Gradient overlay for more sophisticated look -->
-        <div class="absolute inset-0 bg-gradient-to-br from-accent/30 to-purple-600/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10"></div>
         
         <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-7xl font-bold mb-6 opacity-0 animate-fadeInUp drop-shadow-2xl" style="animation-delay: 0.5s;">
-                Halo, Saya Umam!
+            <p class="text-sm mb-5 opacity-0 animate-fadeInUp uppercase tracking-[0.18em]" style="animation-delay: 0.25s;">
+                Portfolio 2026
+            </p>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 opacity-0 animate-fadeInUp" style="animation-delay: 0.5s;">
+                Ahmad Umam
             </h1>
             <p class="text-xl md:text-2xl mb-8 opacity-0 animate-fadeInUp drop-shadow-lg" style="animation-delay: 0.8s;">
                 Data Analyst & Software Developer
             </p>
             <p class="text-lg mb-12 max-w-2xl mx-auto opacity-0 animate-fadeInUp drop-shadow-lg" style="animation-delay: 1.1s;">
-                Saya menggabungkan logika data dengan desain antarmuka yang elegan untuk menciptakan solusi digital yang bermakna. Mari berkolaborasi dan wujudkan inovasi bersama!
+                Saya menggabungkan kemampuan analisis data dan pengembangan aplikasi untuk membangun solusi digital yang membantu pengambilan keputusan serta menyederhanakan proses bisnis.
             </p>
-            <a href="#about" class="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-accent transition-all duration-300 hover:transform hover:-translate-y-1 opacity-0 animate-fadeInUp shadow-2xl" style="animation-delay: 1.4s;">
-                Pelajari Lebih Lanjut
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fadeInUp" style="animation-delay: 1.4s;">
+                <a href="#projects" class="inline-block px-8 py-4 border-2 border-white text-white font-semibold transition-all duration-300 hover:transform hover:-translate-y-1">
+                    Lihat Proyek
+                </a>
+                <a href="#contact" class="inline-block px-8 py-4 border-2 border-white text-white font-semibold transition-all duration-300 hover:transform hover:-translate-y-1">
+                    Hubungi Saya
+                </a>
+            </div>
         </div>
         <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
     </section>
@@ -166,19 +575,21 @@
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="flex justify-center opacity-0 animate-slideInLeft" id="about-image">
-                    <div class="w-80 h-80 rounded-full bg-gradient-to-br from-accent to-blue-400 p-2 shadow-2xl">
-                        <img src="foto/awajah.jpg" alt="Foto Ahmad Khotibul Umam" 
+                    <div class="w-81 h-80 bg-white p-0">
+                        <img src="foto/formal.jpg" alt="Foto Ahmad Khotibul Umam" 
                              class="w-full h-full rounded-full object-cover"/>
                     </div>
                 </div>
                 <div class="opacity-0 animate-slideInRight" id="about-text">
+                    <p class="text-sm text-primary font-bold uppercase tracking-[0.18em] mb-4">Profil Singkat</p>
                     <h3 class="text-3xl font-semibold text-secondary mb-6">Saya Ahmad Umam!</h3>
                     <p class="text-lg text-gray-600 leading-relaxed mb-8 text-justify">
-                        Saya adalah seorang Mahasiswa semester 7 Program Studi Sistem Informasi Universitas Dian
-                        Nuswantoro. berfokus membangun karier sebagai Data Analyst. Berpengalaman dalam pengembangan
-                        aplikasi berbasis mobile, menganalisis data, dan Aktif di organisasi dan kegiatan, dengan kemampuan manajemen
-                        waktu dan komunikasi tim yang baik. siap berkontribusi di perusahaan dengan semangat belajar dan
-                        keterampilan yang saya miliki.
+                        Lulusan Program Studi Sistem Informasi Universitas Dian Nuswantoro dengan ketertarikan pada
+                        pengembangan solusi digital dan teknologi informasi. Memiliki pengalaman dalam pengembangan sistem,
+                        pengolahan data, serta perancangan aplikasi. Terbiasa bekerja secara tim maupun individu, dengan
+                        kemampuan komunikasi, manajemen waktu, dan pemecahan masalah yang baik. Adaptif, cepat
+                        belajar, dan Siap berkontribusi di perusahaan dengan semangat belajar tinggi dan keterampilan yang
+                        saya miliki.
                     </p>
                 </div>
             </div>
@@ -198,7 +609,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-secondary mb-4">Python</h3>
                     <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="90%"></div>
+                        <div class="bg-primary h-2 transition-all duration-1000 skill-bar" data-width="90%"></div>
                     </div>
                     <span class="text-sm text-gray-600">80%</span>
                 </div>
@@ -209,7 +620,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-secondary mb-4">Laravel</h3>
                     <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="85%"></div>
+                        <div class="bg-primary h-2 transition-all duration-1000 skill-bar" data-width="85%"></div>
                     </div>
                     <span class="text-sm text-gray-600">80%</span>
                 </div>
@@ -220,7 +631,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-secondary mb-4">SQL</h3>
                     <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="85%"></div>
+                        <div class="bg-primary h-2 transition-all duration-1000 skill-bar" data-width="85%"></div>
                     </div>
                     <span class="text-sm text-gray-600">80%</span>
                 </div>
@@ -231,7 +642,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-secondary mb-4">UI/UX Design</h3>
                     <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-                        <div class="bg-gradient-to-r from-primary to-blue-600 h-2 rounded-full transition-all duration-1000 skill-bar" data-width="75%"></div>
+                        <div class="bg-primary h-2 transition-all duration-1000 skill-bar" data-width="75%"></div>
                     </div>
                     <span class="text-sm text-gray-600">75%</span>
                 </div>
@@ -260,13 +671,13 @@
             Aplikasi pendakian yang memudahkan beli tiket dan memberikan info jalur dan gunung, membantu pendakian nikmat alam dengan lebih siap dan aman. Menggunakan Laravel dan Flutter.
           </p>
           <div class="flex flex-wrap gap-3 mb-6">
-            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Laravel</span>
-            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Flutter</span>
-            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Mobile App</span>
+            <span class="px-3 py-1 text-sm">Laravel</span>
+            <span class="px-3 py-1 text-sm">Flutter</span>
+            <span class="px-3 py-1 text-sm">Mobile App</span>
           </div>
           <div class="flex flex-wrap gap-4">
             <a href="https://gunungku.com/" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center">
-              <i class="fas fa-external-link-alt mr-2"></i>Lihat
+              <i class="fas fa-external-link-alt mr-2"></i>Lihat Proyek
             </a>
           </div>
         </div>
@@ -287,17 +698,43 @@
             Dashboard analitis ini menyajikan data Tingkat Pengangguran Terbuka (TPT) di Indonesia dengan fokus pada analisis berdasarkan tingkat pendidikan dari tahun 2015 hingga 2024. Dirancang untuk wawasan cepat melalui visualisasi tren dan distribusi pengangguran.
           </p>
           <div class="flex flex-wrap gap-3 mb-6">
-            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Python</span>
-            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Looker Studio</span>
+            <span class="px-3 py-1 text-sm">Python</span>
+            <span class="px-3 py-1 text-sm">Looker Studio</span>
           </div>
           <div class="flex flex-wrap gap-4">
             <a href="https://lookerstudio.google.com/reporting/ce3add2c-f7b5-4168-a648-b416413fc5b6/page/eVeNF" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center">
-              <i class="fas fa-external-link-alt mr-2"></i>Lihat
+              <i class="fas fa-external-link-alt mr-2"></i>Lihat Dashboard
             </a>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Project 3: Larene Ganteng -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="relative group order-1">
+          <div class="overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 transition-transform duration-300">
+            <img src="foto/lareneganteng.png" alt="Larene Ganteng" class="w-full h-64 sm:h-80 object-cover" />
+          </div>
+        </div>
+        <div class="space-y-6 order-2">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Larene Ganteng</h3>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Website pendaftaran penelitian dan magang berbasis Laravel untuk Disperindag Jawa Tengah, dirancang agar proses registrasi lebih cepat, transparan, dan mudah dikelola.
+          </p>
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="px-3 py-1 text-sm">Laravel</span>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://disperindag.jatengprov.go.id/lareneganteng" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i>Lihat Proyek
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -358,135 +795,81 @@
       <!-- Certificates Section -->
     <section id="certificates" class="py-10 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center text-secondary mb-16 relative">
-                Sertifikat
-            </h2>
-            <!-- Certificates Scroll Container -->
-            <div class="relative">
-                <!-- Scrollable Container -->
-                <div class="overflow-x-auto scrollbar-hide certificate-container" style="scroll-behavior: smooth;">
-                    <div class="flex space-x-6 pb-4" style="width: max-content;">
-                        
-                        <!-- Certificate 1 -->
-                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
-                            <div class="relative overflow-hidden rounded-t-2xl">
-                               <div class="w-full aspect-w-16 aspect-h-20">
-                                 <img src="foto/s1.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
-                                    Wirausaha Merdeka 2024
-                                </h3>
-                                <p class="text-gray-600 text-sm mb-3">
-                                    Udinus | MBKM
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs text-gray-400">
-                                        <i class="fas fa-calendar mr-1"></i>Desembar 2024
-                                    </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certificate 2 -->
-                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
-                            <div class="relative overflow-hidden rounded-t-2xl">
-                               <div class="w-full aspect-w-16 aspect-h-20">
-                                 <img src="foto/s2.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
-                                    Data Analyst SQL & Python
-                                </h3>
-                                <p class="text-gray-600 text-sm mb-3">
-                                    DQLab | Bootcamp
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs text-gray-400">
-                                        <i class="fas fa-calendar mr-1"></i>Januari 2024
-                                    </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certificate 3 -->
-                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
-                            <div class="relative overflow-hidden rounded-t-2xl">
-                               <div class="w-full aspect-w-16 aspect-h-20">
-                                 <img src="foto/s3.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
-                                    Dinus Fest 2024
-                                </h3>
-                                <p class="text-gray-600 text-sm mb-3">
-                                    Udinus | Panitia
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs text-gray-400">
-                                        <i class="fas fa-calendar mr-1"></i>Januari 2024
-                                    </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certificate 4 -->
-                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
-                            <div class="relative overflow-hidden rounded-t-2xl">
-                               <div class="w-full aspect-w-16 aspect-h-20">
-                                 <img src="foto/s4.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
-                                    Anggota Hipmi Pt Udinus 2023/2024
-                                </h3>
-                                <p class="text-gray-600 text-sm mb-3">
-                                    UKM | Keaktifan Organisasi
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs text-gray-400">
-                                        <i class="fas fa-calendar mr-1"></i>Juli 2024
-                                    </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Certificate 5 -->
-                        <div class="flex-none w-80 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
-                            <div class="relative overflow-hidden rounded-t-2xl">
-                               <div class="w-full aspect-w-16 aspect-h-20">
-                                 <img src="foto/s5.png" alt="Data Science Professional" class="w-full h-full object-cover rounded-t-2xl" />
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="text-base font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
-                                    Data Science Explorers 2024
-                                </h3>
-                                <p class="text-gray-600 text-sm mb-3">
-                                    SAP | Coursera
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs text-gray-400">
-                                        <i class="fas fa-calendar mr-1"></i>Januari 2024
-                                    </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                <div>
+                    <p class="text-sm text-primary font-bold uppercase tracking-[0.18em] mb-4">Credentials</p>
+                    <h2 class="text-4xl font-bold text-center text-secondary mb-0 relative">
+                        Sertifikat
+                    </h2>
                 </div>
+            </div>
+
+            <div class="certificate-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="certificate-card bg-white group" role="button" tabindex="0" data-certificate-src="foto/s2.png" data-certificate-title="Data Analyst SQL & Python">
+                    <div class="certificate-image">
+                        <img src="foto/s2.png" alt="Sertifikat Data Analyst SQL dan Python" />
+                    </div>
+                    <div class="certificate-body">
+                        <span class="certificate-meta">Januari 2024</span>
+                        <h3>Data Analyst SQL & Python</h3>
+                        <p>DQLab | Bootcamp</p>
+                    </div>
+                </article>
+
+                <article class="certificate-card bg-white group" role="button" tabindex="0" data-certificate-src="foto/s1.png" data-certificate-title="Wirausaha Merdeka 2024">
+                    <div class="certificate-image">
+                        <img src="foto/s1.png" alt="Sertifikat Wirausaha Merdeka 2024" />
+                    </div>
+                    <div class="certificate-body">
+                        <span class="certificate-meta">Desember 2024</span>
+                        <h3>Wirausaha Merdeka 2024</h3>
+                        <p>Udinus | MBKM</p>
+                    </div>
+                </article>
+
+                <article class="certificate-card bg-white group" role="button" tabindex="0" data-certificate-src="foto/s5.png" data-certificate-title="Data Science Explorers 2024">
+                    <div class="certificate-image">
+                        <img src="foto/s5.png" alt="Sertifikat Data Science Explorers 2024" />
+                    </div>
+                    <div class="certificate-body">
+                        <span class="certificate-meta">Januari 2024</span>
+                        <h3>Data Science Explorers 2024</h3>
+                        <p>SAP | Coursera</p>
+                    </div>
+                </article>
+
+                <article class="certificate-card bg-white group" role="button" tabindex="0" data-certificate-src="foto/s3.png" data-certificate-title="Dinus Fest 2024">
+                    <div class="certificate-image">
+                        <img src="foto/s3.png" alt="Sertifikat Dinus Fest 2024" />
+                    </div>
+                    <div class="certificate-body">
+                        <span class="certificate-meta">Januari 2024</span>
+                        <h3>Dinus Fest 2024</h3>
+                        <p>Udinus | Panitia</p>
+                    </div>
+                </article>
+
+                <article class="certificate-card bg-white group md:col-span-2 lg:col-span-1" role="button" tabindex="0" data-certificate-src="foto/s4.png" data-certificate-title="Anggota HIPMI PT Udinus 2023/2024">
+                    <div class="certificate-image">
+                        <img src="foto/s4.png" alt="Sertifikat Anggota HIPMI PT Udinus 2023 2024" />
+                    </div>
+                    <div class="certificate-body">
+                        <span class="certificate-meta">Juli 2024</span>
+                        <h3>Anggota HIPMI PT Udinus 2023/2024</h3>
+                        <p>UKM | Keaktifan Organisasi</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
+
+    <div class="certificate-lightbox" id="certificate-lightbox" aria-hidden="true">
+        <div class="certificate-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="certificate-lightbox-title">
+            <button class="certificate-lightbox-close" type="button" aria-label="Tutup sertifikat">&times;</button>
+            <img src="" alt="" id="certificate-lightbox-image" />
+            <p class="certificate-lightbox-title" id="certificate-lightbox-title"></p>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="py-10 bg-white">
@@ -532,9 +915,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-secondary text-white py-10">
+    <footer class="py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transform hover:scale-110 transition-all duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
                 <p class="text-gray-300">
                     &copy; 2025 Ahmad Umam. Semua hak cipta dilindungi.
                 </p>
@@ -621,84 +1018,56 @@
         if (aboutText) observer.observe(aboutText);
         if (skillsSection) observer.observe(skillsSection);
 
-        // Certificate scroll functionality
-        const certificateContainer = document.querySelector('.certificate-container');
-        const scrollBtnLeft = document.querySelector('.scroll-btn-left');
-        const scrollBtnRight = document.querySelector('.scroll-btn-right');
-        const scrollIndicators = document.querySelectorAll('.scroll-indicator');
+        // Certificate lightbox
+        const certificateCards = document.querySelectorAll('.certificate-card');
+        const certificateLightbox = document.getElementById('certificate-lightbox');
+        const certificateLightboxImage = document.getElementById('certificate-lightbox-image');
+        const certificateLightboxTitle = document.getElementById('certificate-lightbox-title');
+        const certificateLightboxClose = document.querySelector('.certificate-lightbox-close');
 
-        if (certificateContainer && scrollBtnLeft && scrollBtnRight) {
-            const scrollAmount = 320; // Width of one certificate card + gap
-            
-            scrollBtnLeft.addEventListener('click', () => {
-                certificateContainer.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-
-            scrollBtnRight.addEventListener('click', () => {
-                certificateContainer.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Update scroll indicators
-            certificateContainer.addEventListener('scroll', () => {
-                const scrollLeft = certificateContainer.scrollLeft;
-                const scrollWidth = certificateContainer.scrollWidth - certificateContainer.clientWidth;
-                const scrollPercentage = scrollLeft / scrollWidth;
-                
-                // Update active indicator
-                scrollIndicators.forEach((indicator, index) => {
-                    indicator.classList.remove('active');
-                    if (index === Math.round(scrollPercentage * (scrollIndicators.length - 1))) {
-                        indicator.classList.add('active');
-                    }
-                });
-
-                // Show/hide scroll buttons
-                scrollBtnLeft.style.opacity = scrollLeft > 0 ? '1' : '0.5';
-                scrollBtnRight.style.opacity = scrollLeft < scrollWidth ? '1' : '0.5';
-            });
-
-            // Touch/swipe support for mobile
-            let isDown = false;
-            let startX;
-            let scrollLeftStart;
-
-            certificateContainer.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX - certificateContainer.offsetLeft;
-                scrollLeftStart = certificateContainer.scrollLeft;
-                certificateContainer.style.cursor = 'grabbing';
-            });
-
-            certificateContainer.addEventListener('mouseleave', () => {
-                isDown = false;
-                certificateContainer.style.cursor = 'grab';
-            });
-
-            certificateContainer.addEventListener('mouseup', () => {
-                isDown = false;
-                certificateContainer.style.cursor = 'grab';
-            });
-
-            certificateContainer.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - certificateContainer.offsetLeft;
-                const walk = (x - startX) * 2;
-                certificateContainer.scrollLeft = scrollLeftStart - walk;
-            });
-
-            // Initial state
-            certificateContainer.style.cursor = 'grab';
-            scrollBtnLeft.style.opacity = '0.5';
+        function openCertificate(card) {
+            const src = card.getAttribute('data-certificate-src');
+            const title = card.getAttribute('data-certificate-title');
+            certificateLightboxImage.src = src;
+            certificateLightboxImage.alt = `Sertifikat ${title}`;
+            certificateLightboxTitle.textContent = title;
+            certificateLightbox.classList.add('is-open');
+            certificateLightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            certificateLightboxClose.focus();
         }
+
+        function closeCertificate() {
+            certificateLightbox.classList.remove('is-open');
+            certificateLightbox.setAttribute('aria-hidden', 'true');
+            certificateLightboxImage.src = '';
+            document.body.style.overflow = '';
+        }
+
+        certificateCards.forEach(card => {
+            card.addEventListener('click', () => openCertificate(card));
+            card.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openCertificate(card);
+                }
+            });
+        });
+
+        certificateLightboxClose.addEventListener('click', closeCertificate);
+        certificateLightbox.addEventListener('click', event => {
+            if (event.target === certificateLightbox) {
+                closeCertificate();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && certificateLightbox.classList.contains('is-open')) {
+                closeCertificate();
+            }
+        });
+
     </script>
 </body>
-
 
 </html>
